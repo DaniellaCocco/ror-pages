@@ -6,7 +6,7 @@ export default
     primary: '#1454A1'
   },
   font: {
-    heading: 'bolder sans-serif',
-    runningText: 'lighter 18px/1.25 sans-serif'
+    heading: '700 "Roboto Condensed", sans-serif',
+    runningText: '300 18px/1.25 "Roboto", sans-serif'
   }
 }

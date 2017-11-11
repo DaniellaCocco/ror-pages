@@ -16,13 +16,14 @@ export default () =>
       <link rel='manifest' href='/static/manifest.json?v=OmybA708yg' />
       <link rel='mask-icon' href='/static/safari-pinned-tab.svg?v=OmybA708yg' color='#1454a1' />
       <link rel='shortcut icon' href='/static/favicon.ico?v=OmybA708yg' />
-      <link rel='stylesheet' type='text/css' href='/static/normalize.min.css?v=OmybA708yg' />
+      <link rel='stylesheet' type='text/css' href='/static/commons.css' />
     </Head>
     <Intro />
     <style jsx>{`
       :global(p, a) {
         color: ${theme.color.dark};
         font: ${theme.font.runningText};
+        -webkit-font-smoothing: antialiased;
       }
 
       :global(h1, h2, h3, h4, h5, h6) {
