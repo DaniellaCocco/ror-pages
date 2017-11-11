@@ -1,5 +1,5 @@
-import Logo from './logo/logo'
-import Arrow from './arrow'
+import Logo from '../components/logo/logo'
+import Arrow from '../components/arrow'
 import theme from '../theme/index'
 
 export default () =>

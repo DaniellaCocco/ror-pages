@@ -20,7 +20,8 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
       }
 
       section:after {
-        background: url("${decoration.image}");
+        background-image: url("${decoration.image}");
+        background-position: bottom center;
         background-repeat: no-repeat;
         background-size: contain;
         bottom: 0;
@@ -33,7 +34,7 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
       }
 
       .content {
-        background-image: radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,0), rgba(0,0,0,0));
+        background-image: ${dark ? 'radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,0), rgba(0,0,0,0))' : 'radial-gradient(rgba(255,255,255,.8), rgba(255,255,255,0), rgba(255,255,255,0))'};
         max-width: 600px;
         padding: 0 100px;
         width: 80%;
@@ -41,7 +42,7 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
       }
 
       h2 {
-        color: ${theme.color.light};
+        color: ${dark ? theme.color.light : theme.color.dark};
         font-family: 'Roboto', sans-serif;
         font-size: 18px;
         font-weight: 300;
@@ -49,7 +50,7 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
       }
 
       p.subheading {
-        color: ${theme.color.light};
+        color: ${dark ? theme.color.light : theme.color.dark};
         font-size: ${theme.font.heading.size};
         font-family: ${theme.font.heading.family};
         font-weight: ${theme.font.heading.weight};
@@ -59,7 +60,7 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
       }
 
       p {
-        color: ${theme.color.light};
+        color: ${dark ? theme.color.light : theme.color.dark};
         font-size: ${theme.font.runningText.size};
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
