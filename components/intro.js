@@ -14,7 +14,7 @@ export default () =>
       </a>
       <a href="#" className='learnMore'>
         <span href='#'>Learn more</span><br />
-        <Arrow fill={theme.color.light} style={{ width: 24, transform: 'rotate(90deg)' }} anim />
+        <Arrow fill={theme.color.light} style={{ marginTop: 10, width: 24, transform: 'rotate(90deg)' }} anim />
       </a>
     </div>
     <style jsx>{`
@@ -30,7 +30,7 @@ export default () =>
       }
 
       header:after {
-        background: radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,.3), rgba(0,0,0,0));
+        background: radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,.3), rgba(0,0,0,0)), linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,1));
         content: '';
         display: block;
         height: 100vh;
@@ -55,14 +55,18 @@ export default () =>
       p {
         color: ${theme.color.light};
         font-size: 24px;
+        font-family: ${theme.font.runningText.family};
+        font-weight: ${theme.font.runningText.weight};
       }
 
       .toCommunity {
         background-color: ${theme.color.primary};
         border: 0;
-        color: white;
+        color: ${theme.color.light};
         display: inline-block;
-        font-size: 18px;
+        font-size: ${theme.font.runningText.size};
+        font-family: ${theme.font.runningText.family};
+        font-weight: bold;
         height: 64px;
         margin-top: 12px;
         line-height: 64px;
@@ -74,6 +78,9 @@ export default () =>
       .learnMore {
         bottom: 0;
         color: ${theme.color.light};
+        font-size: ${theme.font.runningText.size};
+        font-family: ${theme.font.runningText.family};
+        font-weight: ${theme.font.runningText.weight};
         display: block;
         height: 80px;
         left: 50%;

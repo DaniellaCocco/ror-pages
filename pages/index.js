@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import theme from '../theme'
 import Intro from '../components/intro'
+import About from '../components/about'
 
 export default () =>
   <div>
@@ -19,15 +20,10 @@ export default () =>
       <link rel='stylesheet' type='text/css' href='/static/commons.css' />
     </Head>
     <Intro />
+    <About />
     <style jsx>{`
-      :global(p, a) {
-        color: ${theme.color.dark};
-        font: ${theme.font.runningText};
+      :global(p, a, h1, h2, h3, h4, h5, h6) {
         -webkit-font-smoothing: antialiased;
-      }
-
-      :global(h1, h2, h3, h4, h5, h6) {
-        font: ${theme.font.heading};
       }
 
       :global(a) {

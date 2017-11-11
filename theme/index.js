@@ -6,7 +6,17 @@ export default
     primary: '#1454A1'
   },
   font: {
-    heading: '700 "Roboto Condensed", sans-serif',
-    runningText: '300 18px/1.25 "Roboto", sans-serif'
+    heading: {
+      family: '"Roboto Condensed", serif',
+      lineHeight: 1,
+      size: '70px',
+      weight: 700
+    },
+    runningText: {
+      family: '"Roboto", serif',
+      lineHeight: 1.5,
+      size: '18px',
+      weight: 300
+    }
   }
 }
