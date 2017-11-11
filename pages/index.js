@@ -4,6 +4,7 @@ import theme from '../theme'
 import Intro from '../containers/intro'
 import About from '../containers/about'
 import Team from '../containers/team'
+import Footer from '../containers/footer'
 
 const FrontPage = ({ troopers }) =>
   <div>
@@ -24,6 +25,7 @@ const FrontPage = ({ troopers }) =>
     <Intro />
     <About />
     <Team troopers={troopers} />
+    <Footer />
     <style jsx>{`
       :global(p, a, h1, h2, h3, h4, h5, h6) {
         -webkit-font-smoothing: antialiased;

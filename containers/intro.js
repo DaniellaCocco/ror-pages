@@ -1,4 +1,5 @@
 import Logo from '../components/logo/logo'
+import Button from '../components/button'
 import Arrow from '../components/arrow'
 import theme from '../theme/index'
 
@@ -8,10 +9,7 @@ export default () =>
       <h1>Remains of the Republic</h1>
       <Logo fill={theme.color.light} style={{ width: '80%', maxWidth: 400 }} glow />
       <p>Gaming clan for <em>Star Wars</em> Battlefront II (Playstation 4).</p>
-      <a className='toCommunity' href='//community.ror-clan.eu'>
-        To the community
-        <Arrow fill={theme.color.light} style={{ marginLeft: 12, width: 24 }} />
-      </a>
+      <Button primary />
       <a href="#" className='learnMore'>
         <span href='#'>Learn more</span><br />
         <Arrow fill={theme.color.light} style={{ marginTop: 10, width: 24, transform: 'rotate(90deg)' }} anim />
@@ -57,22 +55,6 @@ export default () =>
         font-size: 24px;
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
-      }
-
-      .toCommunity {
-        background-color: ${theme.color.primary};
-        border: 0;
-        color: ${theme.color.light};
-        display: inline-block;
-        font-size: ${theme.font.runningText.size};
-        font-family: ${theme.font.runningText.family};
-        font-weight: bold;
-        height: 64px;
-        margin-top: 12px;
-        line-height: 64px;
-        padding: 0 40px;
-        text-decoration: none;
-        text-transform: uppercase;
       }
 
       .learnMore {
