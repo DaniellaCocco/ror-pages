@@ -1,16 +1,21 @@
 import Logo from './logo/logo'
+import Arrow from './arrow'
 import theme from '../theme/index'
 
 export default () =>
   <header>
     <div className='content'>
       <h1>Remains of the Republic</h1>
-      <Logo fill={theme.color.light} style={{ width: '80%', maxWidth: 440 }} glow />
+      <Logo fill={theme.color.light} style={{ width: '80%', maxWidth: 400 }} glow />
       <p>Gaming clan for <em>Star Wars</em> Battlefront II (Playstation 4).</p>
-      <a className='toCommunity' href='http://community.ror-clan.eu'>To the community</a>
-      <div className='learnMore'>
-        <a href='#'>Learn more</a>
-      </div>
+      <a className='toCommunity' href='http://community.ror-clan.eu'>
+        To the community
+        <Arrow fill={theme.color.light} style={{ marginLeft: 12, width: 24 }} />
+      </a>
+      <a href="#" className='learnMore'>
+        <span href='#'>Learn more</span><br />
+        <Arrow fill={theme.color.light} style={{ width: 24, transform: 'rotate(90deg)' }} anim />
+      </a>
     </div>
     <style jsx>{`
       header {
@@ -25,7 +30,7 @@ export default () =>
       }
 
       header:after {
-        background: radial-gradient(rgba(0,0,0,.5), rgba(0,0,0,0));
+        background: radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,.3), rgba(0,0,0,0));
         content: '';
         display: block;
         height: 100vh;
@@ -57,10 +62,11 @@ export default () =>
         border: 0;
         color: white;
         display: inline-block;
-        font-size: 20px;
+        font-size: 18px;
         height: 64px;
+        margin-top: 12px;
         line-height: 64px;
-        padding: 0 36px;
+        padding: 0 40px;
         text-decoration: none;
         text-transform: uppercase;
       }
@@ -68,13 +74,19 @@ export default () =>
       .learnMore {
         bottom: 0;
         color: ${theme.color.light};
-        height: 132px;
+        display: block;
+        height: 80px;
+        left: 50%;
+        margin-left: -100px;
         position: absolute;
-        width: 100%;
+        width: 200px;
       }
 
-      .learnMore a {
+      .learnMore span {
+        border-bottom: 1px solid ${theme.color.light};
+        clear: both;
         color: inherit;
+        display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
       }

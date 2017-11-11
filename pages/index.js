@@ -31,6 +31,7 @@ export default () =>
       }
 
       :global(a) {
+        text-decoration: none;
         transition: filter .2s ease;
       }
 

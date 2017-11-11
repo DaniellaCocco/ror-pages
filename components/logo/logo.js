@@ -1,3 +1,4 @@
+import theme from '../../theme'
 import logoPaths from './logo-paths'
 
 export default ({fill, glow, ...rest}) =>
@@ -7,7 +8,7 @@ export default ({fill, glow, ...rest}) =>
     )}
     <style jsx>{`
       svg {
-        ${fill && `fill: ${fill}`};
+        fill: ${fill || theme.color.dark};
         ${glow && `filter: drop-shadow(0 0 4px white)`};
       }
    `}</style>
