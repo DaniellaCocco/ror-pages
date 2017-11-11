@@ -10,10 +10,10 @@ export default () =>
       <Logo fill={theme.color.light} style={{ width: '80%', maxWidth: 400 }} glow />
       <p>Gaming clan for <em>Star Wars</em> Battlefront II (Playstation 4).</p>
       <Button primary />
-      <a href="#" className='learnMore'>
-        <span href='#'>Learn more</span><br />
+      <span className='learnMore' onClick={() => { window.scroll({top: window.innerHeight, behavior: 'smooth'}) }}>
+        <span>Learn more</span><br />
         <Arrow fill={theme.color.light} style={{ marginTop: 10, width: 24, transform: 'rotate(90deg)' }} anim />
-      </a>
+      </span>
     </div>
     <style jsx>{`
       header {
@@ -60,6 +60,7 @@ export default () =>
       .learnMore {
         bottom: 0;
         color: ${theme.color.light};
+        cursor: pointer;
         font-size: ${theme.font.runningText.size};
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
@@ -71,7 +72,7 @@ export default () =>
         width: 200px;
       }
 
-      .learnMore span {
+      .learnMore > span {
         border-bottom: 1px solid ${theme.color.light};
         clear: both;
         color: inherit;
