@@ -1,10 +1,11 @@
+import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
 import theme from '../theme'
 import Intro from '../containers/intro'
 import About from '../containers/about'
 import Team from '../containers/team'
 
-export default () =>
+const FrontPage = ({ troopers }) =>
   <div>
     <Head>
       <title>Remains of the Republic | SWBF2 gaming clan</title>
@@ -22,7 +23,7 @@ export default () =>
     </Head>
     <Intro />
     <About />
-    <Team />
+    <Team troopers={troopers} />
     <style jsx>{`
       :global(p, a, h1, h2, h3, h4, h5, h6) {
         -webkit-font-smoothing: antialiased;
@@ -38,3 +39,11 @@ export default () =>
       }
     `}</style>
   </div>
+
+FrontPage.getInitialProps = async ({ req }) => {
+  const res = await fetch('http://community.ror-clan.eu/api/groups/clan-members/members')
+  const json = await res.json()
+  return { troopers: json.users }
+}
+
+export default FrontPage

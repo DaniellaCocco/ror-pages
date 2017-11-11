@@ -1,4 +1,4 @@
-import theme from '../theme/index'
+import theme from '../theme'
 
 export default ({heading, subheading, text, children, decoration, dark}) =>
   <section>
@@ -6,14 +6,15 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
       <h2>{heading}</h2>
       <p className='subheading'>{subheading}</p>
       {text.map(paragraph => <p>{paragraph}</p>)}
-      {children && children}
     </div>
+    {children && children}
     <style jsx>{`
       section {
         align-items: center;
         background-color: ${dark ? theme.color.dark : theme.color.light};
         display: flex;
         justify-content: center;
+        flex-direction: column;
         padding: 200px 0;
         position: relative;
         width: 100%;

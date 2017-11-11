@@ -8,7 +8,7 @@ export default () =>
       <h1>Remains of the Republic</h1>
       <Logo fill={theme.color.light} style={{ width: '80%', maxWidth: 400 }} glow />
       <p>Gaming clan for <em>Star Wars</em> Battlefront II (Playstation 4).</p>
-      <a className='toCommunity' href='http://community.ror-clan.eu'>
+      <a className='toCommunity' href='//community.ror-clan.eu'>
         To the community
         <Arrow fill={theme.color.light} style={{ marginLeft: 12, width: 24 }} />
       </a>
