@@ -24,8 +24,8 @@ export default ({troopers}) =>
     }}
   >
     <div className='cards'>
-      {troopers.map(({username, picture}) =>
-        <div className='card'>
+      {troopers.map(({username, picture}, i) =>
+        <div className='card' key={i}>
           <div className='avatar'>{avatar(picture)}</div>
           <div className='info'>
             <p className='role'>{role(username)}</p>

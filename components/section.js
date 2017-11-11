@@ -5,7 +5,7 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
     <div className='content'>
       <h2>{heading}</h2>
       <p className='subheading'>{subheading}</p>
-      {text.map(paragraph => <p>{paragraph}</p>)}
+      {text.map((paragraph, i) => <p key={i}>{paragraph}</p>)}
     </div>
     {children && children}
     <style jsx>{`
