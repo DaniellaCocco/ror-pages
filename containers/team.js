@@ -37,16 +37,14 @@ export default ({troopers}) =>
     <style jsx>{`
       .cards {
         color: ${theme.color.light};
-        display: grid;
-        grid-template-columns: repeat(auto-fill, 200px);
-        justify-content: center;
-        align-content: flex-start;
         margin: 40px auto;
-        max-width: 800px;
+        width: 800px;
       }
 
       .card {
         background-color: #999;
+        display: inline-block;
+        width: 200px;
       }
 
       .avatar {
@@ -77,13 +75,29 @@ export default ({troopers}) =>
 
       @media (max-width: ${theme.viewport.medium}px) {
         .cards {
-          grid-template-columns: repeat(auto-fill, 175px);
+          width: 600px;
+        }
+
+        .cards .card {
+          width: 150px;
+        }
+
+        .role {
+          font-size: 12px;
+        }
+
+        .username {
+          font-size: ${theme.font.runningText.smallSize};
         }
       }
 
       @media (max-width: ${theme.viewport.small}px) {
         .cards {
-          grid-template-columns: repeat(auto-fill, 150px);
+          width: 280px;
+        }
+
+        .cards .card {
+          width: 140px;
         }
       }
     `}</style>

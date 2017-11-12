@@ -10,6 +10,7 @@ export default ({fill, anim, ...rest}) =>
         animation-iteration-count: infinite;
         position: relative;
         fill: ${fill || theme.color.dark};
+        transform: ${anim && 'rotate(90deg)'};
       }
 
       @keyframes pointingArrow {

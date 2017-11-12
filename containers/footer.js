@@ -6,7 +6,7 @@ export default () =>
   <footer>
     <div className='content'>
       <div className='info'>
-        <Logo fill={theme.color.light} style={{ width: '125px' }} /><br /><br />
+        <Logo fill={theme.color.light} style={{ height: '55px', width: '125px' }} /><br /><br />
         <small>
           The "Star Wars" handle and related materials are all property of their respective owners. RoR gaming clan does not claim to have any ownership over these materials. No copyright infringement intended.<br /><br />
           RoR is not affiliated with Star Wars, Lucasfilm or EA in any way; we simply are a loosely gathered group of enthusiastic gamers and Battlefront fans who use this website as means of communication.<br /><br />
@@ -64,6 +64,10 @@ export default () =>
         
         .info {
           padding: 75px 10px 0;
+        }
+
+        small {
+          max-width: calc(100vw - 40px);
         }
 
         .extra {

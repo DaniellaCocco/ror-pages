@@ -9,15 +9,15 @@ export default
   },
   font: {
     heading: {
-      family: '"Roboto Condensed", serif',
+      family: '"Roboto Condensed", sans-serif',
       lineHeight: 1.1,
-      size: '70px',
+      size: '58px',
       mediumSize: '50px',
       smallSize: '28px',
       weight: 700
     },
     runningText: {
-      family: '"Roboto", serif',
+      family: '"Roboto", sans-serif',
       lineHeight: 1.5,
       size: '20px',
       smallSize: '16px',

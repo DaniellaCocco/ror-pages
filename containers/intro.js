@@ -7,12 +7,12 @@ export default () =>
   <header>
     <div className='content'>
       <h1>Remains of the Republic</h1>
-      <Logo fill={theme.color.light} style={{ width: '80%', maxWidth: 400 }} glow />
+      <Logo fill={theme.color.light} style={{ width: '75%', maxWidth: 400, maxHeight: 200 }} glow />
       <p>Gaming clan for <em>Star Wars</em> Battlefront II (Playstation 4).</p>
       <Button primary />
       <span className='learnMore' onClick={() => { window.scroll({top: window.innerHeight, behavior: 'smooth'}) }}>
         <span>Learn more</span><br />
-        <Arrow fill={theme.color.light} style={{ marginTop: 10, width: 24, transform: 'rotate(90deg)' }} anim />
+        <Arrow fill={theme.color.light} style={{ marginTop: 10, width: 24 }} anim />
       </span>
     </div>
     <style jsx>{`
@@ -24,6 +24,7 @@ export default () =>
         display: flex;
         justify-content: center;
         height: 100vh;
+        position: relative;
         width: 100%;
       }
 
@@ -32,12 +33,14 @@ export default () =>
         content: '';
         display: block;
         height: 100vh;
+        left: 0;
         position: absolute;
         width: 100%;
+        top: 0;
       }
 
       .content {
-        padding-bottom: 80px;
+        padding-bottom: 100px;
         text-align: center;
         width: 100%;
         z-index: 1;
@@ -56,13 +59,13 @@ export default () =>
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
         line-height: ${theme.font.runningText.lineHeight};
+        padding: 0 20px;
       }
 
       .learnMore {
-        bottom: 0;
+        bottom: 50px;
         color: ${theme.color.light};
-        cursor: pointer;
-        font-size: ${theme.font.runningText.size};
+        font-size: 18px;
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
         display: block;
@@ -71,10 +74,10 @@ export default () =>
         margin-left: -100px;
         position: absolute;
         width: 200px;
+        z-index: 1;
       }
 
       .learnMore > span {
-        border-bottom: 1px solid ${theme.color.light};
         clear: both;
         color: inherit;
         display: inline-block;
@@ -89,8 +92,32 @@ export default () =>
       }
 
       @media (max-width: ${theme.viewport.small}px) {
+        header, header:after {
+          height: 500px;
+        }
+
         header:after {
           background: radial-gradient(rgba(0,0,0,.7), rgba(0,0,0,.4)), linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,1));
+        }
+
+        p {
+          font-size: 20px;
+        }
+
+        .learnMore {
+          bottom: 0;
+        }
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+        header, header:after {
+          height: 600px;
+        }
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+        header, header:after {
+          height: 900px;
         }
       }
     `}</style>

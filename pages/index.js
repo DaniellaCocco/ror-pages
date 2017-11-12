@@ -28,6 +28,7 @@ const FrontPage = ({ troopers }) =>
     <style jsx>{`
       :global(p, a, h1, h2, h3, h4, h5, h6) {
         -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
       }
 
       :global(a) {
