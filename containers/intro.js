@@ -55,6 +55,7 @@ export default () =>
         font-size: 24px;
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
+        line-height: ${theme.font.runningText.lineHeight};
       }
 
       .learnMore {
@@ -79,6 +80,18 @@ export default () =>
         display: inline-block;
         text-decoration: none;
         text-transform: uppercase;
+      }
+
+      @media (max-width: ${theme.viewport.medium}px) {
+        header:after {
+          background: radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,.3), rgba(0,0,0,.2)), linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,1));
+        }
+      }
+
+      @media (max-width: ${theme.viewport.small}px) {
+        header:after {
+          background: radial-gradient(rgba(0,0,0,.7), rgba(0,0,0,.4)), linear-gradient(rgba(0,0,0,0) 80%, rgba(0,0,0,1));
+        }
       }
     `}</style>
   </header>

@@ -10,36 +10,21 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
     {children && children}
     <style jsx>{`
       section {
-        align-items: center;
         background-color: ${dark ? theme.color.dark : theme.color.light};
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        padding: 200px 0;
+        background-image: url('${decoration.image}');
+        background-position: bottom ${decoration.right ? 'right' : 'left'};
+        background-repeat: no-repeat;
+        background-size: 600px;
+        padding: 200px 0 300px;
         position: relative;
         width: 100%;
       }
 
-      section:after {
-        background-image: url("${decoration.image}");
-        background-position: bottom center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        bottom: 0;
-        content: '';
-        display: block;
-        height: 600px;
-        position: absolute;
-        ${decoration.right ? 'right: 0' : 'left: 0'};
-        width: 600px;
-      }
-
       .content {
         background-image: ${dark ? 'radial-gradient(rgba(0,0,0,.8), rgba(0,0,0,0), rgba(0,0,0,0))' : 'radial-gradient(rgba(255,255,255,.8), rgba(255,255,255,0), rgba(255,255,255,0))'};
+        margin: 0 auto;
         max-width: 600px;
-        padding: 0 100px;
         width: 80%;
-        z-index: 1;
       }
 
       h2 {
@@ -66,6 +51,31 @@ export default ({heading, subheading, text, children, decoration, dark}) =>
         font-family: ${theme.font.runningText.family};
         font-weight: ${theme.font.runningText.weight};
         line-height: ${theme.font.runningText.lineHeight};
+      }
+
+      @media (max-width: ${theme.viewport.medium}px) {
+        .content {
+          background-image: ${dark ? 'radial-gradient(rgba(0,0,0,1), rgba(0,0,0,0) 80%, rgba(0,0,0,0))' : 'radial-gradient(rgba(255,255,255,1), rgba(255,255,255,0) 80%, rgba(255,255,255,0))'};
+        }
+
+        p.subheading {
+          font-size: ${theme.font.heading.mediumSize};
+        }
+      }
+
+      @media (max-width: ${theme.viewport.small}px) {
+        section {
+          background-image: none;
+          padding: 100px 0;
+        }
+
+        p.subheading {
+          font-size: ${theme.font.heading.smallSize};
+        }
+
+        p {
+          font-size: ${theme.font.runningText.smallSize};
+        }
       }
     `}</style>
   </section>

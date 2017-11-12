@@ -1,6 +1,5 @@
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
-import theme from '../theme'
 import Intro from '../containers/intro'
 import About from '../containers/about'
 import Team from '../containers/team'

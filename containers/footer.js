@@ -19,16 +19,20 @@ export default () =>
     </div>
     <style jsx>{`
       footer {
+        align-items: center;
         background-color: #999;
         display: flex;
-        padding: 50px;
+        justify-content: center;
+        padding: 75px 100px;
       }
 
       .content {
         align-items: center;
         display: flex;
-        justify-content: center;
-        width: 100%;
+      }
+
+      .info {
+        padding-right: 50px;
       }
 
       small {
@@ -40,18 +44,31 @@ export default () =>
         max-width: 600px;
       }
 
-      .info {
-        padding: 25px;
-      }
-
       .extra {
         align-items: center;
         display: flex;
         flex-grow: 1;
         justify-content: center;
         max-width: 540px;
-        min-width: 300px;
-        padding: 25px;
+        padding: 0 50px;
+      }
+
+      @media (max-width: ${theme.viewport.medium}px) {
+        footer {
+          padding: 50px 0;
+        }
+
+        .content {
+          flex-direction: column-reverse;
+        }
+        
+        .info {
+          padding: 75px 10px 0;
+        }
+
+        .extra {
+          padding: 0;
+        }
       }
     `}</style>
   </footer>
