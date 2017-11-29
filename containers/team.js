@@ -12,29 +12,49 @@ const avatar = picture => {
   return <img style={{width: 'inherit', height: 'inherit'}} src='/static/trooper.jpg' alt='avatar' />
 }
 
-export default ({troopers}) =>
-  <Section
-    heading='Team'
-    subheading='Our living legends'
-    text={[
-      'These are the troopers still active in our European SWBF2 community, even though the original SWBF2 game came out over ten years ago (2005).'
-    ]}
-    decoration={{
-      image: '/static/hoth.jpg'
-    }}
-  >
-    <div className='cards'>
-      {troopers.map(({username, picture}, i) =>
-        <div className='card' key={i}>
-          <div className='avatar'>{avatar(picture)}</div>
-          <div className='info'>
-            <p className='role'>{role(username)}</p>
-            <p className='username'>{username}</p>
+export default class extends React.Component {
+  render () {
+    const leaders = this.props.troopers.filter(trooper => {
+      return trooper.username.match(/^(Phantom|Daniella)$/)
+    })
+
+    const members = this.props.troopers.filter(trooper => {
+      return !trooper.username.match(/^(Phantom|Daniella)$/)
+    }).sort((a, b) => {
+      return a.username.localeCompare(b.username)
+    })
+
+    return <Section
+      heading='Team'
+      subheading='Our living legends'
+      text={[
+        'These are the troopers still active in our European SWBF2 community, even though the original SWBF2 game came out over ten years ago (2005).'
+      ]}
+      decoration={{
+        image: '/static/hoth.jpg'
+      }}
+    >
+      <div className='cards'>
+        {leaders.map(({username, picture}, i) =>
+          <div className='card' key={i}>
+            <div className='avatar'>{avatar(picture)}</div>
+            <div className='info'>
+              <p className='role'>{role(username)}</p>
+              <p className='username'>{username}</p>
+            </div>
           </div>
-        </div>
-      )}
-    </div>
-    <style jsx>{`
+        )}
+        {members.map(({username, picture}, i) =>
+          <div className='card' key={i}>
+            <div className='avatar'>{avatar(picture)}</div>
+            <div className='info'>
+              <p className='role'>{role(username)}</p>
+              <p className='username'>{username}</p>
+            </div>
+          </div>
+        )}
+      </div>
+      <style jsx>{`
       .cards {
         color: ${theme.color.light};
         margin: 40px auto;
@@ -101,4 +121,6 @@ export default ({troopers}) =>
         }
       }
     `}</style>
-  </Section>
+    </Section>
+  }
+}
