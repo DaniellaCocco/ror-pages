@@ -13,6 +13,7 @@ const FrontPage = ({ troopers }) =>
       <meta name='viewport' content='initial-scale=1.0, width=device-width' />
       <meta name='msapplication-config' content='/static/browserconfig.xml' />
       <meta name='theme-color' content='#ffffff' />
+      <meta name="description" content='Gaming clan for Star Wars Battlefront II with a rich history, currently active on Playstation 4 in the EU region. Join our community!' />
       <link rel='apple-touch-icon' sizes='180x180' href='/static/apple-touch-icon.png?v=OmybA708yg' />
       <link rel='icon' type='image/png' sizes='32x32' href='/static/favicon-32x32.png?v=OmybA708yg' />
       <link rel='icon' type='image/png' sizes='16x16' href='/static/favicon-16x16.png?v=OmybA708yg' />
